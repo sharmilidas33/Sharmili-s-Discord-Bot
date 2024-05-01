@@ -73,4 +73,10 @@ async def askai(ctx: commands.Context, *, prompt: str):
 
 
 keep_alive()
-bot.run(token)
+
+try:
+  bot.run(token)
+except discord.errors.HTTPException:
+  print("\n\n\nBLOCKED BY RATE LIMITS\nRESTARTING NOW\n\n\n")
+  os.system('kill 1')
+os.system("python restarter.py")
