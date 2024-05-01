@@ -27,7 +27,7 @@ This Discord bot, named "Sharmili's Discord Bot", is designed to enhance your Di
 8. Run the bot script (`sharmilis_discord_bot.py`).
 
 **Screenshots:**
-https://github.com/sharmilidas33/Sharmili-s-Discord-Bot/issues/1#issue-2273548704
+![SharmiliBot](https://github.com/sharmilidas33/Sharmili-s-Discord-Bot/assets/128738858/c61a0aee-2854-47d6-9a77-b3c429367369)
 
 **Usage:**
 
