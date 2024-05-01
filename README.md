@@ -39,10 +39,6 @@ This Discord bot, named "Sharmili's Discord Bot", is designed to enhance your Di
 
 Contributions to this Discord bot project are welcome! Feel free to fork the repository, make improvements, and submit pull requests.
 
-**License:**
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the LICENSE file for more details.
-
 **Author:**
 
 This Discord bot was created by Sharmili. You can reach out to Sharmili for any inquiries or support regarding this bot.
