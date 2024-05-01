@@ -3,6 +3,8 @@ import os
 from discord.ext import commands
 import google.generativeai as genai
 
+from keep_alive import keep_alive
+
 token = os.environ['SECRET_KEY']
 os.getenv('GOOGLE_API_KEY')
 
@@ -37,34 +39,38 @@ model = genai.GenerativeModel('gemini-pro',
 
 @bot.event
 async def on_ready():
-    if bot.user is not None:
-        print(f"Logged in as: {bot.user.name}!")
-    else:
-        print("Failed to log in to Discord.")
+  if bot.user is not None:
+    print(f"Logged in as: {bot.user.name}!")
+  else:
+    print("Failed to log in to Discord.")
 
 
 @bot.event
 async def on_member_join(member):
-    channel = discord.utils.get(member.guild.channels, name='welcome')
-    if channel:
-        await channel.send(f'Welcome to Sharmili\'s Discord Bot server, {member.mention}!')
+  channel = discord.utils.get(member.guild.channels, name='welcome')
+  if channel:
+    await channel.send(
+        f'Welcome to Sharmili\'s Discord Bot server, {member.mention}!')
 
 
 @bot.event
 async def on_message(message):
-    if message.author == bot.user:
-        return
-    content = message.content.lower()
-    if content in ['hello', 'hi', 'HELLO', 'HI','Hello','Hi']:
-        await message.channel.send(f'Hello {message.author.mention}! Welcome to Sharmili\'s Discord Bot server. Use the command @HeyBot to get started!')
+  if message.author == bot.user:
+    return
+  content = message.content.lower()
+  if content in ['hello', 'hi', 'HELLO', 'HI', 'Hello', 'Hi']:
+    await message.channel.send(
+        f'Hello {message.author.mention}! Welcome to Sharmili\'s Discord Bot server. Use the command @heybot first and then your message, to get started!'
+    )
 
-    await bot.process_commands(message)
+  await bot.process_commands(message)
 
 
-@bot.command(name="HeyBot")
+@bot.command(name="heybot")
 async def askai(ctx: commands.Context, *, prompt: str):
-    response = model.generate_content(prompt)
-    await ctx.reply(response.text)
+  response = model.generate_content(prompt)
+  await ctx.reply(response.text)
 
 
+keep_alive()
 bot.run(token)
