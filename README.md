@@ -26,6 +26,9 @@ This Discord bot, named "Sharmili's Discord Bot", is designed to enhance your Di
 7. Customize the bot's behavior and settings as needed.
 8. Run the bot script (`sharmilis_discord_bot.py`).
 
+**Screenshots:**
+
+
 **Usage:**
 
 - Invite the bot to your Discord server using the [invite link](https://discord.gg/EpQ6Zz6H) generated from the Discord Developer Portal.
